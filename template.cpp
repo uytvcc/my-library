@@ -23,3 +23,27 @@ inline bool chmin(T &a, const T &b){
     if(a>b) {a=b; return true;}
     else return false;
 }
+struct Edge{
+    int to; ll cost; int rev;
+    Edge(int to, ll cost, int rev) : to(to), cost(cost), rev(rev) {}
+};
+typedef vector<Edge> Edges;
+typedef vector<Edges> Graph;
+void add_edge(Graph &g,int from,int to,ll cost,bool revFlag,ll revCost){
+    g[from].push_back(Edge(to,cost,g[to].size()));
+    if(revFlag) g[to].push_back(Edge(from,revCost,g[from].size()-1));
+}
+
+
+
+void solve(){
+    
+}
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout<<setprecision(10)<<fixed;
+    solve();
+    return 0;
+}
